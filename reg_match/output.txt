@@ -2,10 +2,12 @@
 
 D:\james\MyProject\tools\node_util\reg_match\input\fish_loading.lua
 spine
+loadprogress
 
 D:\james\MyProject\tools\node_util\reg_match\input\game3d_loading.lua
 spine
 LOGO
+loadprogress
 
 D:\james\MyProject\tools\node_util\reg_match\input\hall_Exchange.lua
 text_gold
@@ -46,7 +48,7 @@ btn_gonggao
 btn_addgold
 btn_addsafebox
 btn_agent_center
-group_bottom").visible = not config.GetConfigValue("isForPlaymate
+isForPlaymate
 tree/btn_agent_center
 n51
 n53
@@ -94,6 +96,7 @@ hotIcon
 D:\james\MyProject\tools\node_util\reg_match\input\hall_WindowAgentCenter.lua
 Text_Title
 Text_Count
+ReportList
 Text_Search
 Button_Search
 Text_Account
@@ -102,17 +105,25 @@ Text_SubordinateCount
 Text_WinScore
 QRCode
 Text_Link
-Text_Rebates
+Text_RebateValue
+Text_Code
 Text_Date
+Text_State
+Text_Rebates
+MemberList
+ComboBox_Date
 Text_PlayerName
 Text
 Text_GameRecode
+Text_Recode
+Text_Content
 Text_ID
 Text_gold
 Text_room
 
 D:\james\MyProject\tools\node_util\reg_match\input\hall_WindowAnnounce.lua
 loading_effect
+label_empty
 loader_area
 label_notRead
 linkBtn
@@ -180,6 +191,7 @@ num
 line
 time
 award
+/list
 help
 txtnull
 dayOnline/myself
@@ -200,6 +212,8 @@ CreateTime
 btn_scfuzhi
 btn_sckefu
 money_list_cg
+Name
+Sum
 CheckDodos
 OrderNo
 Daili
@@ -239,6 +253,7 @@ btn_turntable_3/n4
 jifen_1
 jifen_2
 hint
+t1
 list_01
 n32
 n33
@@ -265,4 +280,4 @@ right/remind
 right/list
 index
 
-总计匹配： 233
+总计匹配： 248

@@ -3,7 +3,7 @@ var path = require('path');
 
 
 //而且要注意，这是字符串，所以转义符号要用\\
-var reg = 'find_by_name.+,"(.*)"\\)'
+var reg = 'find_by_name.+["\'](.*)["\']\s*\\)'
 
 //是否匹配括号内的东西
 var is_match_bracket = true;
