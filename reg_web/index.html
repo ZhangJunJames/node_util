@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reg_web</title>
+    <style>
+        html{
+            width: 100%;
+        }
+        .container{
+            width: 100%;
+            margin: auto, 0px;
+        }
+        .error {
+            color: red;
+        }
+        div p:first{
+            color: green;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div>
+            <p>text:</p>
+            <textarea id="input" cols="30" rows="10">aabbcddddkkkddbb</textarea>
+        </div>
+
+        <div>
+            <p>reg:</p>
+            <input id="reg" type="text" value=".*(bb).*(kk).*">
+            <p>flag:</p>
+            <input id="flag" type="text">
+        </div>
+        <div>
+            <button onclick="test();">test</button>
+        </div>
+        <div>
+            <p>result:</p>
+            <p id="result"></p>
+        </div>
+    </div>
+
+    <script src="jquery-3.4.1.min.js"></script>
+    <script>
+        $(function () {
+
+        });
+
+        function test() {
+            var input_text = $("#input").val();
+            var reg = $("#reg").val();
+            var flag = $("#flag").val();
+
+            $('#result').html("");
+            $('#result').removeClass("error");
+            try {
+                var ret = input_text.match(new RegExp(reg, flag));
+                if (ret) {
+                    $("#result").html(ret.join("<br>"));
+                }
+                else{
+                    $("#result").text("no match");
+                    $('#result').addClass("error");
+                }
+            } catch (e) {
+                $("#result").text(e);
+                $('#result').addClass("error");
+                //while raise a error ,will exc this code
+            }
+
+        }
+    </script>
+</body>
+
+</html>
+<!-- 
+aabbcddddkkkddbb
+
+ -->
