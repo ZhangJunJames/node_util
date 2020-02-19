@@ -8,7 +8,7 @@ var reg = 'find_by_name.+,"(.*)"\\)'
 //是否匹配括号内的东西
 var is_match_bracket = true;
 
-var inputDir = "D:\\james\\MyProject\\tools\\reg_match\\input"
+var inputDir = "D:\\james\\MyProject\\tools\\node_util\\reg_match\\input"
 var output = "output.txt"
 
 function readFileList(dir, filesList = []) {
