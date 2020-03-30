@@ -1,0 +1,21 @@
+{
+	"src": {
+		"entity": "./src/core/EntityTemplate.ts"
+	},
+	"output": {
+		"entity": "./src/core/Entity.ts",
+		"comp": "./src/data/Components.ts"
+		
+	},
+	"component": {
+		"Fish": true,
+		"Bullet": [
+			"res: string"
+		],
+		"Position":[
+			"x: number",
+			"y: number",
+			"z: number"
+		]
+	}
+}
