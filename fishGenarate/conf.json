@@ -16,6 +16,10 @@
 			"x: number",
 			"y: number",
 			"z: number"
+		],
+		"Size":[
+			"width: number",
+			"height: number"
 		]
 	}
 }

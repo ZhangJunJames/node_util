@@ -105,4 +105,25 @@ export class Entity {
         this.removeComponent(Componets.PositionComponent);
     }
 
+    public get size(){
+        return this._getComponent(Componets.SizeComponent) as Componets.SizeComponent;
+    }
+
+    public hasSize(){
+        return this._hasComponent(Componets.SizeComponent);
+    }
+
+    public addSize(width: number, height: number) {
+        let comp = new Componets.SizeComponent();
+        comp.replaceSize(width, height);
+    }
+
+    public replaceSize(width: number, height: number) {
+        this.size.replaceSize(width, height);
+    }
+
+    public removeSize(width: number, height: number) {
+        this.removeComponent(Componets.SizeComponent);
+    }
+
 }

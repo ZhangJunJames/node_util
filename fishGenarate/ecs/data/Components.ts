@@ -30,6 +30,20 @@ export class PositionComponent extends ComponentBase{
         this._z = z;
     }
 }
+export class SizeComponent extends ComponentBase{
+    private _width: number;
+    private _height: number;
+    public get width(){
+        return this._width;
+    }
+    public get height(){
+        return this._height;
+    }
+    public replaceSize(width: number, height: number){
+        this._width = width;
+        this._height = height;
+    }
+}
 
 
 
