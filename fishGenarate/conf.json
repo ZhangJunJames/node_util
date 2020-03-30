@@ -1,10 +1,10 @@
 {
 	"src": {
-		"entity": "./src/core/EntityTemplate.ts"
+		"entity": "./ecs/core/EntityTemplate.ts"
 	},
 	"output": {
-		"entity": "./src/core/Entity.ts",
-		"comp": "./src/data/Components.ts"
+		"entity": "./ecs/core/Entity.ts",
+		"comp": "./ecs/data/Components.ts"
 		
 	},
 	"component": {
