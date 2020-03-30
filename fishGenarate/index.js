@@ -27,10 +27,19 @@ function registerHelpers() {
     });
 }
 function registerPartials() {
-    Handlebars.registerPartial(
-        "person",
-        "{{person.name}} is {{person.age}} years old.\n"
-    );
+    let registerPartial = function(filename){
+        let data = fs.readFileSync(path.resolve("hbs", filename + ".hbs")).toString();
+        Handlebars.registerPartial(
+            filename,
+            data
+        );
+    }
+    // Handlebars.registerPartial(
+    //     "person",
+    //     "{{person.name}} is {{person.age}} years old.\n"
+    // );
+    registerPartial("partial-component");
+    registerPartial("partial-entity");
 }
 
 function genEntity() {

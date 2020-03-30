@@ -62,7 +62,6 @@ export class Entity {
             this.addComponent(comp);
         }
     }
-
     public get bullet(){
         return this._getComponent(Componets.BulletComponent) as Componets.BulletComponent;
     }

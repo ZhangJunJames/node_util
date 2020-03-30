@@ -1,45 +1,6 @@
 //这个文件由tools/fishGenarate生成的，不要手动修改
 {{{template}}}
 {{#each component}}
-    {{#if (isArray this)}}
-        {{!-- 怎么重命名：compName：@key， key：this ?--}}
-    public get {{lowercase @key}}(){
-        return this._getComponent(Componets.{{@key}}Component) as Componets.{{@key}}Component;
-    }
-
-    public has{{@key}}(){
-        return this._hasComponent(Componets.{{@key}}Component);
-    }
-
-    public add{{@key}}({{args this}}) {
-        let comp = new Componets.{{@key}}Component();
-        comp.replace{{@key}}({{parameter this}});
-    }
-
-    public replace{{@key}}({{args this}}) {
-        this.{{lowercase @key}}.replace{{@key}}({{parameter this}});
-    }
-
-    public remove{{@key}}({{args this}}) {
-        this.removeComponent(Componets.{{@key}}Component);
-    }
-
-    {{else}}
-    public is{{@key}}() {
-        return this._hasComponent(Componets.{{@key}}Component);
-    }
-
-    public set{{@key}}(value: boolean) {
-        let comp = this._getComponent(new Componets.{{@key}}Component());
-        if(!value && comp){
-            this.removeComponent(Componets.{{@key}}Component);
-        }
-        else if(value && !comp){
-            comp = new Componets.{{@key}}Component();
-            this.addComponent(comp);
-        }
-    }
-
-    {{/if}}
+{{> partial-entity compName=@key arguments=this}}
 {{/each}}
 }

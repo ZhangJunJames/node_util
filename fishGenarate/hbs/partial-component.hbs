@@ -1,0 +1,20 @@
+{{#if (isArray arguments)}}
+export class {{compName}}Component extends ComponentBase{
+    {{#each arguments}}
+    private _{{this}};
+    {{/each}}
+    {{#each arguments}}
+    public get {{getField this}}(){
+        return this._{{getField this}};
+    }
+    {{/each}}
+    public replace{{compName}}({{args arguments}}){
+    {{#each arguments}}
+        this._{{getField this}} = {{getField this}};
+    {{/each}}
+    }
+}
+{{else}}
+export class {{compName}}Component extends ComponentBase{
+}
+{{/if}}

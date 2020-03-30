@@ -1,0 +1,38 @@
+ {{#if (isArray arguments)}}
+    public get {{lowercase compName}}(){
+        return this._getComponent(Componets.{{compName}}Component) as Componets.{{compName}}Component;
+    }
+
+    public has{{compName}}(){
+        return this._hasComponent(Componets.{{compName}}Component);
+    }
+
+    public add{{compName}}({{args arguments}}) {
+        let comp = new Componets.{{compName}}Component();
+        comp.replace{{compName}}({{parameter arguments}});
+    }
+
+    public replace{{compName}}({{args arguments}}) {
+        this.{{lowercase compName}}.replace{{compName}}({{parameter arguments}});
+    }
+
+    public remove{{compName}}({{args arguments}}) {
+        this.removeComponent(Componets.{{compName}}Component);
+    }
+
+{{else}}
+    public is{{compName}}() {
+        return this._hasComponent(Componets.{{compName}}Component);
+    }
+
+    public set{{compName}}(value: boolean) {
+        let comp = this._getComponent(new Componets.{{compName}}Component());
+        if(!value && comp){
+            this.removeComponent(Componets.{{compName}}Component);
+        }
+        else if(value && !comp){
+            comp = new Componets.{{compName}}Component();
+            this.addComponent(comp);
+        }
+    }
+{{/if}}

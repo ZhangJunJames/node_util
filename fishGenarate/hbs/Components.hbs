@@ -1,26 +1,7 @@
 //这个文件由tools/fishGenarate生成的，不要手动修改
 import { ComponentBase } from "../core/ComponentBase"
 {{#each component}}
-{{#if (isArray this)}}
-export class {{@key}}Component extends ComponentBase{
-    {{#each this}}
-    private _{{this}};
-    {{/each}}
-    {{#each this}}
-    public get {{getField this}}(){
-        return this._{{getField this}};
-    }
-    {{/each}}
-    public replace{{@key}}({{args this}}){
-    {{#each this}}
-        this._{{getField this}} = {{getField this}};
-    {{/each}}
-    }
-}
-{{else}}
-export class {{@key}}Component extends ComponentBase{
-}
-{{/if}}
+{{> partial-component compName=@key arguments=this}}
 {{/each}}
 
 
